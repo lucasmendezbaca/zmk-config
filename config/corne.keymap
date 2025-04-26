@@ -9,24 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    unicode_map_entries {
-        compatible = "zmk,unicode-map-entries";
-
-        unicode_map_entry UNICODE_N_TILDE {
-            code = <0x00F1>;
-        };
-    };
-
-    behaviors {
-        unicode_map {
-            compatible = "zmk,behavior-unicode-map";
-
-            bindings = <
-                &unicode_map UNICODE_N_TILDE
-            >;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 

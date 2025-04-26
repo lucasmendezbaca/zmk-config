@@ -1,0 +1,12 @@
+/ {
+    behaviors {
+        unicode_map {
+            compatible = "zmk,behavior-unicode-map";
+
+            bindings = <
+                &unicode_map_entry UNICODE_N_TILDE 0x00F1 // ñ
+                &unicode_map_entry UNICODE_DQUOTE 0x0022 // "
+            >;
+        };
+    };
+};
