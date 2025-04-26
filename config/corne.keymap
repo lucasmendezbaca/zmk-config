@@ -9,6 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        unicode_map_behavior: unicode_map_behavior {
+            compatible = "zmk,behavior-unicode-map";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
