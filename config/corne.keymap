@@ -9,6 +9,32 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        compatible = "zmk,macro";
+
+        macro_at: macro_at {
+            label = "AT";
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <
+                &macro_press &kp RALT    // presiona AltGr (derecho)
+                &macro_tap &kp 2         // pulsa 2
+                &macro_release &kp RALT  // suelta AltGr
+            >;
+        };
+
+        macro_pipe: macro_pipe {
+            label = "PIPE";
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <
+                &macro_press &kp LSFT    // presiona Shift izquierdo
+                &macro_tap &kp BSLH     // pulsa \
+                &macro_release &kp LSFT // suelta Shift
+            >;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -47,10 +73,10 @@
 // | CTRL |     |     |     |     |     |   |  +  |  _  |  {  |  }  |  \  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-                &kp TAB   &kp EXCL    &unicode 0x40 &kp HASH   &kp DLLR   &kp PRCNT    &trans    &kp CARET  &kp AMPS  &kp LPAR  &kp RPAR  &kp ASTRK  &kp BSPC
-                &kp LSHFT &trans      &trans       &trans     &trans     &trans       &trans    &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &unicode 0x7C &kp GRAVE
-                &kp LCTRL &trans      &trans       &trans     &trans     &trans       &trans    &kp PLUS   &kp UNDER &kp LBRC  &kp RBRC  &kp BSLH   &kp TILDE
-                        &kp LGUI  &trans       &kp SPACE  &trans     &kp RET      &trans    &kp RALT
+                &kp TAB      &kp EXCL    &macro_at      &kp HASH   &kp DLLR   &kp PRCNT    &trans    &kp CARET  &kp AMPS  &kp LPAR  &kp RPAR  &kp ASTRK  &kp BSPC
+                &kp LSHFT    &trans      &trans         &trans     &trans     &trans       &trans    &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &macro_pipe &kp GRAVE
+                &kp LCTRL    &trans      &trans         &trans     &trans     &trans       &trans    &kp PLUS   &kp UNDER &kp LBRC  &kp RBRC  &kp BSLH   &kp TILDE
+                            &kp LGUI   &trans         &kp SPACE  &trans     &kp RET      &trans    &kp RALT
             >;
         };
     };
