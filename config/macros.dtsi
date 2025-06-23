@@ -1,21 +1,24 @@
 /*
- * macros.dtsi - Macros para ZMK
+ * macros.dtsi
+ * Definiciones de macros personalizados para ZMK keymap
  */
 
-#include <dt-bindings/zmk/keys.h>
-
-/ {
+ / {
     macros {
-        compatible = "zmk,macros";
+        compatible = "zmk,behavior-macros";
 
         macro_at: macro_at {
+            compatible = "zmk,behavior-macro";
             label = "@";
-            bindings = <&kp 2 0>;  // &kp 2 0 equivale a la tecla '@'
+            #binding-cells = <0>;
+            behavior-cells = <1>;
         };
 
         macro_pipe: macro_pipe {
+            compatible = "zmk,behavior-macro";
             label = "|";
-            bindings = <&kp 49 0>; // &kp 49 0 equivale a la tecla '|'
+            #binding-cells = <0>;
+            behavior-cells = <1>;
         };
     };
 };
