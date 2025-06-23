@@ -1,13 +1,21 @@
-/macros {
-    compatible = "zmk,macro";
+/*
+ * macros.dtsi - Macros para ZMK
+ */
 
-    macro_at: macro_at {
-        label = "AT";
-        bindings = <&kp RALT &kp 2>;
-    };
+#include <dt-bindings/zmk/keys.h>
 
-    macro_pipe: macro_pipe {
-        label = "PIPE";
-        bindings = <&kp LSFT &kp BSLH>;
+/ {
+    macros {
+        compatible = "zmk,macros";
+
+        macro_at: macro_at {
+            label = "@";
+            bindings = <&kp 2 0>;  // &kp 2 0 equivale a la tecla '@'
+        };
+
+        macro_pipe: macro_pipe {
+            label = "|";
+            bindings = <&kp 49 0>; // &kp 49 0 equivale a la tecla '|'
+        };
     };
 };
