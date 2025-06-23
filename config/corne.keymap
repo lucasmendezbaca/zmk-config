@@ -1,82 +1,58 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * copyright (c) 2020 the zmk contributors
  *
- * SPDX-License-Identifier: MIT
+ * spdx-license-identifier: mit
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include "macros.dtsi"
+
 / {
-    macros {
-        compatible = "zmk,macro";
-
-        macro_at: macro_at {
-            label = "AT";
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = <
-                &macro_press &kp RALT    // presiona AltGr (derecho)
-                &macro_tap &kp 2         // pulsa 2
-                &macro_release &kp RALT  // suelta AltGr
-            >;
-        };
-
-        macro_pipe: macro_pipe {
-            label = "PIPE";
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = <
-                &macro_press &kp LSFT    // presiona Shift izquierdo
-                &macro_tap &kp BSLH     // pulsa \
-                &macro_release &kp LSFT // suelta Shift
-            >;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ñ  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
+// |  tab |  q  |  w  |  e  |  r  |  t  |   |  y  |  u  |  i  |  o  |  p  | bspc |
+// | shft |  a  |  s  |  d  |  f  |  g  |   |  h  |  j  |  k  |  l  |  ñ  |  '   |
+// | ctrl |  z  |  x  |  c  |  v  |  b  |   |  n  |  m  |  ,  |  .  |  /  | esc  |
+//                    | gui | lwr | spc |   | ent | rse | alt |
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I    &kp O   &kp P &kp BSPC
-                &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K    &kp L   &kp SEMI &kp SQT
-                &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                &kp LGUI &mo 1 &kp SPACE       &kp RET &mo 2 &kp RALT
+                &kp tab   &kp q &kp w &kp e &kp r &kp t    &kp y &kp u  &kp i    &kp o   &kp p &kp bspc
+                &kp lshft &kp a &kp s &kp d &kp f &kp g    &kp h &kp j  &kp k    &kp l   &kp semi &kp sqt
+                &kp lctrl &kp z &kp x &kp c &kp v &kp b    &kp n &kp m  &kp comma &kp dot &kp fslh &kp esc
+                &kp lgui &mo 1 &kp space       &kp ret &mo 2 &kp ralt
             >;
         };
 
         lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |  ;  |  :  |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  tab |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | bspc |
+// | btclr| bt1 | bt2 | bt3 | bt4 | bt5 |   | lft | dwn |  up | rgt |     |      |
+// | shft |     |     |     |     |     |   |     |     |  ;  |  :  |     |      |
+//                    | gui |     | spc |   | ent |     | alt |
             bindings = <
-                &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &kp SEMI &kp COLON &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                &kp tab    &kp n1       &kp n2       &kp n3       &kp n4       &kp n5         &kp n6   &kp n7   &kp n8 &kp n9    &kp n0 &kp bspc
+                &bt bt_clr &bt bt_sel 0 &bt bt_sel 1 &bt bt_sel 2 &bt bt_sel 3 &bt bt_sel 4   &kp left &kp down &kp up &kp right &trans &trans
+                &kp lshft  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &kp semi &kp colon &trans &trans
+                                    &kp lgui     &trans       &kp space      &kp ret  &trans   &kp ralt
             >;
         };
 
         raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  (  |  )  |  *  | BSPC |
-// | SHFT |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
-// | CTRL |     |     |     |     |     |   |  +  |  _  |  {  |  }  |  \  |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  tab |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  (  |  )  |  *  | bspc |
+// | shft |     |     |     |     |     |   |  -  |  =  |  [  |  ]  | "|" |  `   |
+// | ctrl |     |     |     |     |     |   |  +  |  _  |  {  |  }  |  \  |  ~   |
+//                    | gui |     | spc |   | ent |     | alt |
             bindings = <
-                &kp TAB      &kp EXCL    &macro_at      &kp HASH   &kp DLLR   &kp PRCNT    &trans    &kp CARET  &kp AMPS  &kp LPAR  &kp RPAR  &kp ASTRK  &kp BSPC
-                &kp LSHFT    &trans      &trans         &trans     &trans     &trans       &trans    &kp MINUS  &kp EQUAL &kp LBKT  &kp RBKT  &macro_pipe &kp GRAVE
-                &kp LCTRL    &trans      &trans         &trans     &trans     &trans       &trans    &kp PLUS   &kp UNDER &kp LBRC  &kp RBRC  &kp BSLH   &kp TILDE
-                            &kp LGUI   &trans         &kp SPACE  &trans     &kp RET      &trans    &kp RALT
+                &kp tab      &kp excl    &macro_at      &kp hash   &kp dllr   &kp prcnt    &trans    &kp caret  &kp amps  &kp lpar  &kp rpar  &kp astrk  &kp bspc
+                &kp lshft    &trans      &trans         &trans     &trans     &trans       &trans    &kp minus  &kp equal &kp lbkt  &kp rbkt  &macro_pipe &kp grave
+                &kp lctrl    &trans      &trans         &trans     &trans     &trans       &trans    &kp plus   &kp under &kp lbrc  &kp rbrc  &kp bslh   &kp tilde
+                            &kp lgui   &trans         &kp space  &trans     &kp ret      &trans    &kp ralt
             >;
         };
     };
