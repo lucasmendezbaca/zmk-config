@@ -52,9 +52,9 @@
 // | CTRL |  <  |  >  |     |     |     |   |  +  |  _  |  {  |  }  |  \  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-                &kp TAB       &kp LS(N1)        &kp LS(N2)          &kp RA(N3)       &kp LS(N4)        &kp LS(N5)       &kp LS(N6)       &kp LS(N7)    &kp LS(N8)     &kp LS(N9)                &kp LS(N0)     &kp BSPC
-                &kp LSHFT     &kp EQUAL         &kp RA(N2)          &kp RA(E)        &trans            &kp PLUS         &kp UNDER        &kp FSLH      &kp RA(LBKT)   &kp RA(RBKT)              &kp RA(N1)     &kp MINUS
-                &kp LCTRL     &kp NON_US_HASH   &kp LS(NON_US_HASH) &trans           &trans            &trans           &kp RBKT         &kp LS(FSLH)  &kp RA(SQT)    &kp RA(NON_US_BACKSLASH)  &kp RA(GRAVE)  &kp RA(N4)
+                &kp TAB       &kp LS(N1)             &kp LS(N2)               &kp RA(N3)       &kp LS(N4)        &kp LS(N5)       &kp LS(N6)       &kp LS(N7)    &kp LS(N8)     &kp LS(N9)          &kp LS(N0)     &kp BSPC
+                &kp LSHFT     &kp EQUAL              &kp RA(N2)               &kp RA(E)        &trans            &kp PLUS         &kp UNDER        &kp FSLH      &kp RA(LBKT)   &kp RA(RBKT)        &kp RA(N1)     &kp MINUS
+                &kp LCTRL     &kp NON_US_BACKSLASH   &kp LS(NON_US_BACKSLASH) &trans           &trans            &trans           &kp RBKT         &kp LS(FSLH)  &kp RA(SQT)    &kp RA(NON_US_HASH) &kp RA(GRAVE)  &kp RA(N4)
                                    &kp LGUI  &trans            &kp SPACE        &kp RET           &trans           &kp RALT
             >;
         };
