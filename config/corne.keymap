@@ -53,7 +53,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
                 &kp TAB       &kp LS(N1)     &kp LS(N2)        &kp RA(N3)       &kp LS(N4)        &kp LS(N5)       &kp LS(N6)      &kp LS(N7)      &kp LS(N8)     &kp LS(N9)      &kp LS(N0)    &kp BSPC
-                &kp LSHFT     &trans         &trans            &trans           &trans            &trans           &kp FSLH         &kp trans      &kp RA(LBKT)   &kp RA(RBKT)    &kp RA(N1) &kp MINUS
+                &kp LSHFT     &trans         &trans            &trans           &trans            &trans           &kp FSLH         &trans      &kp RA(LBKT)   &kp RA(RBKT)    &kp RA(N1) &kp MINUS
                 &kp LCTRL     &trans         &trans            &trans           &trans            &trans           &kp RBKT     &kp LS(FSLH)  &kp RA(SQT)   &kp RA(RBKT)    &kp RA(GRAVE)  &kp RA(N4)
                                    &kp LGUI  &trans            &kp SPACE        &kp RET           &trans           &kp RALT
             >;
