@@ -14,14 +14,11 @@
         active-locale = "es";
     };
 
-    behaviors {
-        tri_layer: tri_layer {
-            compatible = "zmk,behavior-tri-layer";
-            label = "TRI_LAYER";
-            #binding-cells = <0>;
-            lower-layer = <1>;
-            upper-layer = <2>;
-            tri-layer = <3>;
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -39,13 +36,6 @@
                 &kp LSHFT &kp A &kp S &kp D &kp F &kp G    &kp H &kp J  &kp K     &kp L   &kp SEMI   &kp SQT
                 &kp LCTRL &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp UNDER  &kp ESC
                 &kp LGUI &mo 1 &kp SPACE    &kp RET &mo 2 &kp RALT
-            >;
-        };
-
-        // “fantasma” para activar fn_layer cuando MO1+MO2
-        tri_layer_listener {
-            bindings = <
-                &tri_layer
             >;
         };
 
